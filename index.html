@@ -8,18 +8,22 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Tenali+Ramakrishna&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <script src="JS/main.js" defer></script>
     <title>Nikita Sazonov</title>
 </head>
-<body>
-  
+<body class="Background">
+        <!-- Navigation -->
         <div class="Navbar">
             <a href="#home">Home</a>
+
+            <a href="#Slideshow">Slideshow</a>
 
             <a href="#About">About</a>
 
             <a href="https://github.com/Nikita1-1/my-portfolio.git" target = "_blank">GitHub</a>
 
-            <a href="#Contact">Contact</a>
+
+            <a onclick="openForm()" ondblclick="closeForm()" class="contact_btn">Contact</a>
         </div>    
 
 
@@ -34,7 +38,7 @@
             </video>
         </div>
 
-
+        <!-- Video Section -->
         <div class="Video_Text">
             <h1 class="white_text">Your Name's Portfolio</h1>
             <strong>
@@ -52,9 +56,58 @@
             </strong>
         </div>
 
+        <!-- Slideshow section -->
+        <div id="Slideshow">
+            <div id="Slideshow_Background">
+                <div id="Slideshow_container">
+                    
+                    <div class="mySlides Fade">
+                        <img class="SlideShow_Images" src="" alt="">
+                        <div class="text"> I am Available to Assist You On Your Project!</div>
+                    </div>
+
+                    <div class="mySlides Fade">
+                        <img class="SlideShow_Images" src="img/me.jpg" alt="">
+                        <div class="text">I am Full-Stack Software Developer<br> trained in: <br> HTML, JavaScript, CSS, </div>
+                    </div>
+
+                    <div class="mySlides Fade">
+                        <img class="SlideShow_Images" src="img/Python.png" alt="">
+                        <div class="text">The Popular Programming Langueage Python</div>
+                    </div>
+
+                    <div class="mySlides Fade">
+                        <img class="SlideShow_Images" src="img/C_Sharp_and_Dot_NET (1).png" alt="">
+                        <div class="text">C#, .NET Framework, ASP.NET, MVC.</div>
+                    </div>
+
+                    <div class="mySlides Fade">
+                        <img class="SlideShow_Images" src="img/SQL_and_Database.jpg" alt="">
+                        <div class="text">Back End Development, Database & SQL</div>
+                    </div>
+
+                    <div class="mySlides Fade">
+                        <img class="SlideShow_Images" src="img/me_2.JPG" alt="">
+                        <div class="text"><a class="white-text contact" onclick="openForm()" href="">Contact Me Now!</a></div>
+                    </div>
+
+                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="next" onclick="plusSlide(1)">&#10095;</a>
+
+                    <div style="text-align: center">
+                        <span class="dot" onclick="currentSlide(1)"></span>
+                        <span class="dot" onclick="currentSlide(2)"></span>
+                        <span class="dot" onclick="currentSlide(3)"></span>
+                        <span class="dot" onclick="currentSlide(4)"></span>
+                        <span class="dot" onclick="currentSlide(5)"></span>
+                        <span class="dot" onclick="currentSlide(6)"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
 
         <!--About Section-->
-
         <div class="Row" id="About">
             <!--Left Column-->
             <div class="Column_2">
@@ -74,7 +127,6 @@
 
 
         <!--GitHub Section-->
-
         <div class="Row" id="GitHub">
             <!--Leftt Column-->
             <div class="Column_1">
@@ -91,7 +143,7 @@
             </div>
         </div>
 
-
+        <!-- Contact section -->
         <div class="Row" id="Contact"> 
             <!--Contact image, Left Column-->
             <div class="Column_2 Column_tall">
@@ -113,6 +165,26 @@
             </div>
         </div>
 
+        <!-- Pop up section -->
+        <div id="popup">
+            <button onclick="openForm()" class="Pop_Up_Button">Contact</button>
+            <div class="form_popup" id="myForm"> 
+                <form action="https://formspree.io/info@learncodinganywhere.com" method="POST" class="form-container">
+                    <h1>Contact</h1>
+                    <label for="name"><b>Name</b></label>
+                        <input type="text" placeholder="Full Name" name="name" required>
+                    <label for="phone"><b>Phone</b></label>
+                        <input type="text" placeholder="Enter You Phone" name="phone">
+                    <label for="email"> <b>Email</b></label>
+                        <input type="text" placeholder="Email Address" name="email" required>
+                    <label for="message"><b>Message</b></label>
+                        <input type="text" placeholder="Type Your Message" name="message">
+
+                    <button type="Submit" class="btn">SUBMIT</button>
+                    <button type="button" class="btn cancel" onclick="closeForm()">CLOSE</button>
+                </form>
+            </div>
+        </div>
 
         <footer>
             <p>
