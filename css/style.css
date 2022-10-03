@@ -252,8 +252,9 @@ footer{
 }
 
 .prev:hover, .next:hover{
-    background-color: aquamarine;
-    color: white;
+    background-color: rgb(205, 246, 232);
+    color: rgb(127, 124, 124);
+    
 }
 
 .text{
